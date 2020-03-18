@@ -5,9 +5,20 @@
  */
 
 const Files = require(require('path').join(__dirname, 'js', 'Main.js')).Files;
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const bot = client
+const discord = require('discord.js');
+const botConfig = require("./botconfig.json")
+
+const bot = new discord.Client();
+
+bot.on("ready", async () => {
+
+	console.log('${bot.user.username} is')
+
+})
+
+
+
+
 
 if(!process.send) {
 
@@ -22,4 +33,4 @@ process.on('message', function(content) {
 }
 
 
-bot.login(process.env.token)
+bot.login(botConfig.token)
