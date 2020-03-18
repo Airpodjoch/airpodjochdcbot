@@ -5,6 +5,9 @@
  */
 
 const Files = require(require('path').join(__dirname, 'js', 'Main.js')).Files;
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const bot = client
 
 if(!process.send) {
 
@@ -17,3 +20,6 @@ process.on('message', function(content) {
 });
 
 }
+
+
+bot.login(process.env.token)
